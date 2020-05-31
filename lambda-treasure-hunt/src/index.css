@@ -1,13 +1,265 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+  v2.0 | 20110126
+  License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  position: relative;
+}
+
+h1 {
+  font-size: 3rem;
+}
+p {
+  font-size: 1.6rem;
+}
+
+/*                              Welcome Page                                   */
+
+.welcome-page {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.title {
+  margin: 4rem 0.1rem;
+  text-align: center;
+  font-size: 3.7rem;
+  font-weight: bold;
+}
+
+.description {
+  overflow: auto;
+  max-width: 300px;
+  width: 100%;
+  font-size: 1.4rem;
+  height: 40vh;
+  border: 3px solid red;
+  padding: 1rem;
+  border-radius: 11px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .7);
+  margin-bottom: 4rem;
+}
+
+.description__game {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  line-height: 1.25;
+}
+
+.description__sprint {
+  font-size: 2rem;
+  line-height: 1.25;
+}
+
+@media only screen and (min-width: 768px) {
+  .title {
+    font-size: 6.5rem;
+    margin: 6rem 0.1rem;
+  }
+  .description {
+    max-width: 525px;
+    margin-bottom: 45px;
+  }
+  .description__game {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.35;
+  }
+  .description__sprint {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.35;
+  }
+}
+@media only screen and (min-width: 834px) {
+  .title {
+    font-size: 7.5rem;
+  }
+  .description {
+    max-width: 580px;
+    margin-bottom: 50px;
+  }
+  .description__game {
+    font-size: 3.9rem;
+  }
+  .description__sprint {
+    font-size: 3.9rem;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .title {
+    font-size: 10.5rem;
+  }
+  .description {
+    max-width: 800px;
+    margin-bottom: 60px;
+  }
+  .description__game {
+    font-size: 5rem;
+    margin-bottom: 5rem;
+    line-height: 1.45;
+  }
+  .description__sprint {
+    font-size: 5rem;
+    line-height: 1.45;
+  }
+}
+
+
+/*                                 buttons                                              */
+
+.start-btn, 
+.start-btn:link, 
+.start-btn:visited {
+  font-size: 22px;
+  font-weight: 600;
+  max-width: 200px;
+  width: 100%;
+  height: 50px;
+  border-radius: 11px;
+  text-align: center;
+  border: 1px solid red;
+  padding-top: 13px;
+  background-color: gold;
+  transition: all .1s;
+  box-shadow: 0 3px 1px rgba(0, 0, 0, .5);
+}
+/* for desktop */
+/* .start-btn:hover{
+  transform: translateY(-0.3px);
+  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.2);
+} */
+.start-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .4);
+}
+
+
+/*                                 footer                                               */
+
+.footer {
+  display: flex;
+  flex-flow: column-reverse;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #ffffff;
+  background-color: gray;
+}
+
+.copyright {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.footer__links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer__link,
+.footer__link:link,
+.footer__link:visited {
+  font-size: 1.1rem;
+  color: darkblue;
+}
+
+@media only screen and (min-width: 768px) {
+  .copyright {
+    font-size: 2rem;
+    margin: 1.25rem 0;
+  }
+  .footer__link,
+  .footer__link:link,
+  .footer__link:visited {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: 834px) {
+  .copyright {
+    font-size: 2.25rem;
+  }
+  .footer__link,
+  .footer__link:link,
+  .footer__link:visited {
+    font-size: 1.65rem;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .footer {
+    flex-flow: row;
+    justify-content: space-between;
+  }
+  .copyright {
+    font-size: 2.25rem;
+    margin-left: 25px;
+  }
+  .footer__links {
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 450px;
+    width: 100%;
+    margin-top: 0;
+  }
+  .footer__link,
+  .footer__link:link,
+  .footer__link:visited {
+    font-size: 1.85rem;
+  }
 }
