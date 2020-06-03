@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import { Link } from "react-router-dom";
+import Footer from '../components/footer';
 
 class Welcome extends Component {
     
@@ -21,16 +22,9 @@ class Welcome extends Component {
                             </p>
                         </div>
                     </div>
-                    <a className="start-btn">Start</a>
+                    <Link to="/home" className="start-btn">Start</Link>
                 </section>
-                <footer className="footer">
-                    <p className="copyright">&copy; Brandon Saravia</p>
-                    <div className="footer__links">
-                        <a href="https://github.com/BrandonSaravia/LambdaMudTreasureHunt" className="footer__link">View Code</a>
-                        <a href="https://www.brandonsaravia.com/" className="footer__link">Learn About Me</a>
-                        <a href="mailto: BPSaravia@gmail.com" className="footer__link">Contact Me</a>
-                    </div>
-                </footer>
+                <Footer />
             </>
         )
     }

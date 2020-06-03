@@ -61,10 +61,12 @@ body {
 }
 
 h1 {
+  font-family: 'Pirata One', cursive;
   font-size: 3rem;
 }
 p {
   font-size: 1.6rem;
+  font-family: 'Roboto Slab', serif;
 }
 
 /*                              Welcome Page                                   */
@@ -73,6 +75,10 @@ p {
   display: flex;
   flex-flow: column;
   align-items: center;
+  background-image: url("./background-images/cave.jpg");
+  background-size: cover;
+  height: 100vh;
+  background-position: 50% 0;
 }
 
 .title {
@@ -80,6 +86,17 @@ p {
   text-align: center;
   font-size: 3.7rem;
   font-weight: bold;
+  letter-spacing: 13px;
+  color: gold;
+}
+
+.description-container {
+  background: url("./background-images/map.png");
+  background-size: cover;
+  /* border: 3px solid red; */
+  border-radius: 11px;
+  margin-bottom: 4rem;
+  overflow: hidden;
 }
 
 .description {
@@ -88,11 +105,16 @@ p {
   width: 100%;
   font-size: 1.4rem;
   height: 40vh;
-  border: 3px solid red;
   padding: 1rem;
+  margin: 0 auto;
+  /* background-color: rgba(255, 255, 255, .5); */
+}
+
+.description::-webkit-scrollbar-corner {
   border-radius: 11px;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, .7);
-  margin-bottom: 4rem;
+}
+.description::-webkit-scrollbar-corner {
+  border-radius: 11px;
 }
 
 .description__game {
@@ -111,9 +133,11 @@ p {
     font-size: 6.5rem;
     margin: 6rem 0.1rem;
   }
+  .description-container {
+    margin-bottom: 45px;
+  }
   .description {
     max-width: 525px;
-    margin-bottom: 45px;
   }
   .description__game {
     font-size: 3.5rem;
@@ -130,9 +154,11 @@ p {
   .title {
     font-size: 7.5rem;
   }
+  .description-container {
+    margin-bottom: 50px;
+  }
   .description {
     max-width: 580px;
-    margin-bottom: 50px;
   }
   .description__game {
     font-size: 3.9rem;
@@ -145,17 +171,21 @@ p {
   .title {
     font-size: 10.5rem;
   }
+  .description-container {
+    margin-bottom: 60px;
+    max-width: 850px;
+    width: 100%;
+  }
   .description {
     max-width: 800px;
-    margin-bottom: 60px;
   }
   .description__game {
-    font-size: 5rem;
+    font-size: 4rem;
     margin-bottom: 5rem;
     line-height: 1.45;
   }
   .description__sprint {
-    font-size: 5rem;
+    font-size: 4rem;
     line-height: 1.45;
   }
 }
@@ -171,10 +201,13 @@ p {
   max-width: 200px;
   width: 100%;
   height: 50px;
+  text-decoration: none;
   border-radius: 11px;
   text-align: center;
   border: 1px solid red;
   padding-top: 13px;
+  font-family: 'Pirata One', cursive;
+  letter-spacing: 2px;
   background-color: gold;
   transition: all .1s;
   box-shadow: 0 3px 1px rgba(0, 0, 0, .5);
@@ -187,6 +220,17 @@ p {
 .start-btn:active {
   transform: translateY(1px);
   box-shadow: 0 2px 3px rgba(0, 0, 0, .4);
+}
+
+@media only screen and (min-width: 1025px) {
+  .start-btn:hover {
+    transform: scale(1.2);
+    color: red;
+    letter-spacing: 4px;
+  }
+  .start-btn:active {
+    transform: scale(1);
+  }
 }
 
 
